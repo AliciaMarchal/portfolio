@@ -1,0 +1,134 @@
+/* =========================
+   Variables (mêmes que portfolio)
+========================= */
+:root {
+  --bg: #FFF8F9;
+  --text: #333333;
+  --primary: #FF4F81;
+  --primary-600: #D42D5F;
+  --accent: #A188C9;
+  --card: #FFFFFF;
+  --muted-border: #ddd;
+  --shadow-1: 0 4px 10px rgba(0,0,0,.05);
+  --shadow-2: 0 6px 20px rgba(0,0,0,.08);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 40px;
+}
+
+/* =========================
+   Container
+========================= */
+.container {
+  background: var(--card);
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-2);
+  max-width: 420px;
+  width: 100%;
+  animation: fadeIn .5s ease-in-out;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--primary);
+  font-size: 1.6rem;
+}
+
+/* =========================
+   Form controls
+========================= */
+.input-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+input {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid var(--muted-border);
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  background: var(--primary);
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background .3s ease, transform .2s ease;
+}
+
+button:hover {
+  background: var(--primary-600);
+  transform: translateY(-1px);
+}
+
+/* =========================
+   Counter
+========================= */
+#counter {
+  margin: 10px 0 15px;
+  font-weight: 600;
+  color: #555;
+  text-align: center;
+}
+
+/* =========================
+   Task list
+========================= */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  margin-bottom: 8px;
+  background: #f9f9f9;
+  border: 1px solid var(--muted-border);
+  border-radius: 8px;
+  font-size: 1rem;
+  box-shadow: var(--shadow-1);
+}
+
+li button {
+  background: transparent;
+  color: var(--primary-600);
+  font-size: 1.1rem;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: color .2s ease, transform .2s ease;
+}
+
+li button:hover {
+  color: var(--primary);
+  transform: scale(1.1);
+}
+
+/* =========================
+   Animations
+========================= */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

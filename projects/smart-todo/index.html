@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Smart To-Do List – Alicia Marchal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Smart To-Do List by Alicia Marchal – add/remove tasks, prevent duplicates, live counter."
+  />
+  <link rel="stylesheet" href="/portfolio-draft/projects/smart-todo/styles.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="app__header">
+      <h1>Smart To-Do List</h1>
+      <p>Dynamic list with duplicate prevention and live counter.</p>
+      <p class="app__author">by Alicia Marchal</p>
+    </header>
+
+    <section class="controls">
+      <label class="controls__label" for="todo-input">New task</label>
+      <div class="controls__row">
+        <input
+          id="todo-input"
+          class="controls__input"
+          type="text"
+          placeholder="Type a task…"
+          autocomplete="off"
+        />
+        <button id="add-btn" class="btn btn--primary" type="button">
+          Add
+        </button>
+      </div>
+      <p class="controls__hint" id="message" aria-live="polite"></p>
+    </section>
+
+    <section class="list">
+      <header class="list__header">
+        <h2>Tasks</h2>
+        <p>
+          Tasks total:
+          <span id="counter">0</span>
+        </p>
+      </header>
+
+      <ul id="todo-list" class="list__items">
+        <!-- Items rendered by JS -->
+      </ul>
+
+      <button id="clear-btn" class="btn btn--ghost" type="button">
+        Clear all
+      </button>
+    </section>
+  </main>
+
+  <script src="/portfolio-draft/projects/smart-todo/app.js"></script>
+</body>
+</html>

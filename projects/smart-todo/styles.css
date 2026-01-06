@@ -1,0 +1,223 @@
+/* ============ Variables & reset ============ */
+:root {
+  --bg: #FFF8F9;
+  --text: #333;
+  --soft: #F9E0E3;
+  --primary: #FF4F81;
+  --primary-600: #D42D5F;
+  --accent: #7E66B8;
+  --card: #FFF;
+  --muted-border: #ddd;
+  --shadow-1: 0 4px 10px rgba(0, 0, 0, .05);
+  --shadow-2: 0 6px 20px rgba(0, 0, 0, .08);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  background: var(--bg);
+  font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+}
+
+/* ============ Carte principale ============ */
+
+.app {
+  width: 100%;
+  max-width: 520px;
+  background: var(--card);
+  border-radius: 14px;
+  border: 1px solid var(--muted-border);
+  box-shadow: var(--shadow-2);
+  padding: 26px 22px 22px;
+}
+
+/* Header */
+
+.app__header {
+  margin-bottom: 18px;
+}
+
+.app__header h1 {
+  font-size: 1.6rem;
+  margin-bottom: 4px;
+  color: var(--accent);
+}
+
+.app__header p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.app__author {
+  font-size: 0.8rem;
+  color: #777;
+  margin-top: 4px;
+}
+
+/* ============ Controls ============ */
+
+.controls {
+  margin-bottom: 18px;
+}
+
+.controls__label {
+  display: block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #777;
+  margin-bottom: 6px;
+}
+
+.controls__row {
+  display: flex;
+  gap: 10px;
+}
+
+.controls__input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--muted-border);
+  font-size: 0.95rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  background: #fff;
+}
+
+.controls__input::placeholder {
+  color: #bbb;
+}
+
+.controls__input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(255, 79, 129, 0.18);
+  background: #fff;
+}
+
+.controls__hint {
+  font-size: 0.8rem;
+  margin-top: 6px;
+  min-height: 1.1em;
+  color: #D42D5F;
+}
+
+/* ============ Buttons ============ */
+
+.btn {
+  border-radius: 999px;
+  padding: 9px 16px;
+  border: 1px solid var(--muted-border);
+  background: #fff;
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  background: #f7f7f7;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-1);
+}
+
+.btn--primary {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+
+.btn--primary:hover {
+  background: var(--primary-600);
+}
+
+.btn--ghost {
+  margin-top: 10px;
+  width: 100%;
+}
+
+/* ============ Liste ============ */
+
+.list__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+
+.list__header h2 {
+  font-size: 1.05rem;
+}
+
+.list__header p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+#counter {
+  font-weight: 700;
+  color: var(--primary-600);
+}
+
+.list__items {
+  list-style: none;
+  max-height: 240px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+/* Item */
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid var(--muted-border);
+  background: #fff;
+  transition: background 0.15s ease, box-shadow 0.15s ease, transform 0.1s ease;
+}
+
+.todo-item + .todo-item {
+  margin-top: 6px;
+}
+
+.todo-item span {
+  flex: 1;
+  font-size: 0.95rem;
+}
+
+.todo-item button {
+  padding-inline: 10px;
+}
+
+/* Highlight du dernier ajouté */
+.todo-item--new {
+  background: rgba(255, 79, 129, 0.06);
+  border-color: rgba(255, 79, 129, 0.45);
+}
+
+/* Mobile */
+
+@media (max-width: 480px) {
+  .app {
+    padding: 22px 16px 18px;
+  }
+}

@@ -1,0 +1,157 @@
+/* ============ 0) Variables & reset ============ */
+:root{
+  --bg:#FFF8F9; --text:#333; --soft:#F9E0E3; --primary:#FF4F81; --primary-600:#D42D5F;
+  --accent:#7E66B8; --card:#FFF; --muted-border:#ddd;
+  --shadow-1:0 4px 10px rgba(0,0,0,.05); --shadow-2:0 6px 20px rgba(0,0,0,.08);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  background:var(--bg); color:var(--text); line-height:1.6;
+  display:flex; flex-direction:column; min-height:100vh; animation:fadeIn .3s ease;
+}
+main{flex:1; padding:60px 20px}
+:focus-visible{outline:2px solid #111; outline-offset:3px}
+@media (prefers-reduced-motion: reduce){ *{animation-duration:.01ms !important; transition-duration:.01ms !important} }
+@keyframes fadeIn{ from{opacity:0} to{opacity:1} }
+@keyframes fadeInUp{ from{opacity:0; transform:translateY(8px)} to{opacity:1; transform:translateY(0)} }
+
+/* Utility for screen readers */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* ============ 1) Header & Nav ============ */
+.site-header{
+  background:var(--soft); text-align:center; padding:60px 20px; transition:background .2s;
+}
+.site-header:hover{ background:#F3C9CD }
+.site-header h1{ font-size:clamp(2rem,2.5vw + 1rem,2.4rem); margin-bottom:8px }
+.nav{ list-style:none; display:flex; justify-content:center; gap:28px; margin-top:18px }
+.nav a{ text-decoration:none; color:var(--text); font-weight:600; transition:color .15s }
+.nav a:hover,.nav a:focus-visible{ color:var(--primary) }
+
+/* ============ 2) Sections & Cards ============ */
+.section{ max-width:1100px; margin:40px auto }
+.card{
+  background:var(--card); border:1px solid var(--muted-border); border-radius:12px;
+  box-shadow:var(--shadow-1); padding:36px;
+}
+.section h2{
+  font-size:clamp(1.6rem,1.2vw + 1rem,2rem); margin-bottom:22px; position:relative; display:inline-block;
+}
+.section h2::after{
+  content:""; position:absolute; left:0; right:0; bottom:-6px; height:3px;
+  background:linear-gradient(90deg,var(--primary),var(--accent)); transform:scaleX(.25);
+  transform-origin:left; transition:transform .25s; border-radius:2px;
+}
+.section:hover h2::after{ transform:scaleX(1) }
+
+/* ============ 3) About ============ */
+#about{ display:grid; grid-template-columns:1fr; gap:20px }
+#about > h2{ grid-column:1/-1 }
+.profile-pic{
+  width:220px; height:220px; object-fit:cover; object-position:top; border-radius:12px;
+  box-shadow:0 6px 15px rgba(0,0,0,.08); transition:transform .2s, box-shadow .2s;
+}
+.profile-pic:hover,.profile-pic:focus-visible{ transform:scale(1.03); box-shadow:0 8px 18px rgba(0,0,0,.1) }
+@media (min-width:768px){
+  #about{ grid-template-columns:260px 1fr; align-items:start }
+  .profile-pic{ justify-self:start; max-width:100% }
+}
+
+/* ============ 4) Skills ============ */
+.skills{ list-style:none; display:flex; flex-wrap:wrap; justify-content:center; gap:12px }
+.skills li{
+  border:1px solid var(--muted-border); border-radius:8px; padding:10px 16px; font-weight:600; color:#555;
+  box-shadow:var(--shadow-1); background:#fff; transition:transform .2s, background .2s;
+}
+.skills li:hover{ transform:translateY(-2px); background:#f6f6f6 }
+
+/* ============ 5) Projects ============ */
+#projects{ box-shadow:var(--shadow-2) }
+.section-intro{ color:#555; margin-top:-6px }
+.projects-grid{
+  display:grid; gap:24px; margin-top:26px;
+  grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+  align-items:start;
+}
+
+#counter{
+  transform: scale(1.2);
+}
+
+.project-card{
+  display:flex; flex-direction:column;
+  border:1px solid var(--muted-border); border-radius:12px; padding:18px; background:#fff;
+  transition:transform .2s, box-shadow .2s; text-align:left;
+}
+.project-card:hover{ transform:translateY(-4px); box-shadow:var(--shadow-2) }
+.project-card__frame{
+  width:100%; aspect-ratio:16/9; border-radius:8px; overflow:hidden;
+  background:#f4f4f4; border:1px solid var(--muted-border); margin-bottom:12px;
+}
+.project-card__img{ width:100%; height:100%; object-fit:cover; display:block; transition:transform .2s }
+.project-card:hover .project-card__img{ transform:scale(1.02) }
+.project-card h3{ font-size:1.15rem; margin:6px 0 6px; color:var(--accent); font-weight:600 }
+.project-desc{ font-size:.95rem; color:#555; margin-bottom:8px }
+.project-bullets{ margin:6px 0 0 18px; color:#444; font-size:.92rem }
+.project-bullets li{ margin:4px 0 }
+.project-links{ margin-top:auto; display:flex; gap:10px }
+.btn{
+  flex:1; text-align:center; padding:9px 14px; border:1px solid var(--muted-border); border-radius:8px;
+  text-decoration:none; color:var(--text); font-weight:700; background:#fff; transition:background .2s, transform .15s;
+}
+.btn:hover{ background:#f9f9f9; transform:translateY(-1px) }
+.btn[aria-disabled="true"]{ pointer-events:none; opacity:.6 }
+.btn-primary{ background:var(--primary); color:#fff; border-color:transparent }
+.btn-primary:hover{ background:var(--primary-600) }
+code{ background:#f3f3f3; padding:0 4px; border-radius:4px }
+
+.project-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:4px 0 10px;
+}
+
+.tag{
+  font-size:.75rem;
+  padding:4px 10px;
+  border-radius:999px;
+  border:1px solid var(--muted-border);
+  background:#fff;
+  box-shadow:var(--shadow-1);
+  text-transform:uppercase;
+  letter-spacing:.04em;
+}
+
+.tag-js{
+  background:rgba(255, 223, 93, 0.6); /* léger jaune JS */
+}
+
+.tag-html{
+  background:rgba(255, 159, 128, 0.3);
+}
+
+.tag-css{
+  background:rgba(126, 102, 184, 0.18);
+}
+
+
+/* ============ 6) Contact & Footer ============ */
+.contact{ background:#fff0f5; border:1px solid var(--muted-border) }
+.contact-form{ display:flex; flex-direction:column; gap:14px; animation:fadeInUp .3s ease }
+label{ font-weight:700; color:#555 }
+input[type="text"],input[type="email"],textarea{
+  padding:12px 14px; border:1px solid #ccc; border-radius:8px; font:inherit; background:#fff;
+  transition:border .2s, box-shadow .2s;
+}
+input:focus,textarea:focus{ border-color:var(--primary); box-shadow:0 0 8px rgba(233,30,99,.18); outline:none }
+textarea{ resize:vertical; min-height:120px }
+button[type="submit"]{
+  background:var(--primary); color:#fff; padding:12px 20px; border:none; border-radius:8px; font:inherit; font-weight:700;
+  cursor:pointer; transition:background .2s, transform .15s;
+}
+button[type="submit"]:hover{ background:var(--primary-600); transform:translateY(-1px) }
+
+.site-footer{ background:#222; color:#fff; text-align:center; padding:20px }

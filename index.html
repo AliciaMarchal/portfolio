@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Alicia Marchal – Junior Front-End Developer</title>
+  <meta name="description" content="Portfolio of Alicia Marchal, junior front-end developer: HTML, CSS, JavaScript, React (in progress). Clean, responsive and accessible projects.">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/portfolio-draft/css/style.css"/>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <header class="site-header">
+    <h1>Alicia Marchal</h1>
+    <p>Junior Front-End Developer</p>
+    <nav aria-label="Primary">
+      <ul class="nav">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- About -->
+    <section id="about" class="card section">
+      <h2>About Me</h2>
+      <img
+        src="/portfolio-draft/photos/portfolio.jpg"
+        alt="Portrait of Alicia"
+        class="profile-pic"
+        loading="lazy" decoding="async"
+        width="220" height="220"
+      />
+      <p>
+        Hi! I'm Alicia, a junior front-end developer based in Belgium.<br>
+        I build clean, responsive and user-friendly web apps.<br>
+        Currently deepening JavaScript and starting React. Open to opportunities.
+      </p>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="card section">
+      <h2>Skills</h2>
+      <ul class="skills" aria-label="Technical skills">
+        <li><span aria-hidden="true">💻</span> HTML5</li>
+        <li><span aria-hidden="true">🎨</span> CSS3</li>
+        <li><span aria-hidden="true">⚙</span> JavaScript</li>
+        <li><span aria-hidden="true">📱</span> Responsive Design</li>
+        <li><span aria-hidden="true">🔧</span> Git & GitHub</li>
+        <li><span aria-hidden="true">🐍</span> Python (beginner)</li>
+      </ul>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="card section">
+      <h2>Projects</h2>
+      <p class="section-intro">Four focused projects. Same card structure for a clean grid.</p>
+      <p>Projects completed : <span id="counter">0</span></p>
+
+      <div class="projects-grid">
+        <!-- 1) Smart To-Do List -->
+        <article class="project-card">
+          <figure class="project-card__frame">
+            <img
+            class="project-card__img"
+            src="/portfolio-draft/photos/smarttodo.png"
+            alt="Screenshot of Smart To-Do List"
+            loading="lazy"
+            decoding="async"
+            width="640"
+            height="360"
+            />
+            <figcaption class="sr-only">Smart To-Do List App UI</figcaption>
+          </figure>
+          
+          <h3>Smart To-Do List</h3>
+          
+          <div class="project-tags">
+            <span class="tag tag-js">JavaScript</span>
+            <span class="tag tag-html">HTML</span>
+            <span class="tag tag-css">CSS</span>
+          </div>
+          
+          <p class="project-desc">
+            Dynamic and responsive to-do app with duplicate prevention, clean
+            <em>state → render → DOM</em> flow and highlighted last-added task.
+          </p>
+          
+          <ul class="project-bullets">
+            <li>Normalization to prevent duplicates</li>
+            <li>Single <code>render()</code> function</li>
+            <li>Clean state & DOM updates</li>
+            <li>Highlight for last added task</li>
+          </ul>
+          
+          <div class="project-links">
+            <a
+            class="btn btn-primary"
+            href="/portfolio-draft/projects/smart-todo/index.html"
+            target="_blank"
+            rel="noopener"
+            >Live</a>
+            
+            <a
+            class="btn"
+            href="https://github.com/AliciaMarchal/smart-todo"
+            target="_blank"
+            rel="noopener"
+            >Code</a>
+          </div>
+        </article>
+
+        <!-- 2) Task Manager App -->
+        <article class="project-card">
+          <figure class="project-card__frame">
+            <img 
+            class="project-card__img" 
+            src="/portfolio-draft/photos/taskmanager.png" 
+            alt="Screenshot of Task Manager App" 
+            loading="lazy" 
+            decoding="async" 
+            width="640" 
+            height="360">
+            <figcaption class="sr-only">Task Manager App UI</figcaption>
+          </figure>
+
+          <h3>Task Manager App</h3>
+
+          <div class="project-tags" aria-label="Technologies used">
+            <span class="tag tag-js">JavaScript</span>
+            <span class="tag tag-html">HTML</span>
+            <span class="tag tag-css">CSS</span>
+          </div>
+
+          <p class="project-desc">
+            Manage tasks dynamically with live counter. Full state → render → DOM cycle.
+          </p>
+          <ul class="project-bullets">
+            <li>State array + single <code>render()</code></li>
+            <li>Create/delete tasks in sync with UI</li>
+            <li>Duplicate prevention via normalization</li>
+          </ul>
+
+          <div class="project-links">
+            <a
+            class="btn btn-primary"
+            href="/portfolio-draft/projects/Task manager/task-manager.html"
+            target="_blank"
+            rel="noopener"
+            >Live</a>
+            <a
+            class="btn"
+            href="https://github.com/AliciaMarchal/task-manager"
+            target="_blank"
+            rel="noopener"
+            >Code</a>
+          </div>
+        </article>
+
+        <!-- 3) Shopping Cart App -->
+        <article class="project-card">
+          <figure class="project-card__frame">
+            <img 
+            class="project-card__img" 
+            src="/portfolio-draft/photos/NEWSHOPPINGCARD.png" 
+            alt="Screenshot of Shopping Cart App" 
+            loading="lazy" 
+            decoding="async" 
+            width="640" 
+            height="360">
+            <figcaption class="sr-only">Shopping Cart App UI</figcaption>
+          </figure>
+
+          <h3>Shopping Cart App</h3>
+
+          <div class="project-tags" aria-label="Technologies used">
+            <span class="tag tag-js">JavaScript</span>
+            <span class="tag tag-html">HTML</span>
+            <span class="tag tag-css">CSS</span>
+          </div>
+
+          <p class="project-desc">
+            Add/remove/clear products dynamically. Totals with <code>reduce</code>.
+            Prices formatted for fr-BE.
+          </p>
+          <ul class="project-bullets">
+            <li>Event delegation</li>
+            <li><code>Intl.NumberFormat('fr-BE')</code></li>
+            <li>Clean state & re-render cycle</li>
+          </ul>
+          <div class="project-links">
+          <a
+          class="btn btn-primary"
+          href="/portfolio-draft/projects/shoppingcartapp/shoppingcard.html"
+          target="_blank"
+          rel="noopener"
+        >Live</a>
+          <a
+          class="btn"
+          href="https://github.com/AliciaMarchal/shopping-cart"
+          target="_blank"
+          rel="noopener"
+          >Code</a>
+          </div>
+        </article>
+
+        <!-- 4) Movie Filter App -->
+        <article class="project-card">
+          <figure class="project-card__frame">
+            <img 
+            class="project-card__img" 
+            src="/portfolio-draft/photos/moviefilter.png" 
+            alt="Screenshot of Movie Filter App" 
+            loading="lazy" 
+            decoding="async" 
+            width="640" 
+            height="360">
+            <figcaption class="sr-only">Movie Filter App UI</figcaption>
+          </figure>
+
+          <h3>Movie Filter App</h3>
+
+          <div class="project-tags" aria-label="Technologies used">
+            <span class="tag tag-js">JavaScript</span>
+            <span class="tag tag-html">HTML</span>
+            <span class="tag tag-css">CSS</span>
+          </div>
+          
+          <p class="project-desc">
+            Filters movies rated ≥ 8.0. DOM manipulation + conditional logic.
+          </p>
+          <ul class="project-bullets">
+            <li>Filter form + results list</li>
+            <li>Guard clauses, clean functions</li>
+            <li>Accessible labels</li>
+          </ul>
+          <div class="project-links">
+            <a
+            class="btn btn-primary"
+            href="/portfolio-draft/projects/moviefilterapp/moviefilterapp.html"
+            target="_blank"
+            rel="noopener"
+            >Live</a>
+            <a
+            class="btn"
+            href="https://github.com/AliciaMarchal/movie-filter"
+            target="_blank"rel="noopener"
+            >Code</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="card section contact">
+      <h2>Contact Me</h2>
+      <form class="contact-form" id="contact-form" aria-describedby="form-note" action="#" method="post" novalidate>
+        <label for="name">Your name</label>
+        <input id="name" name="name" type="text" autocomplete="name" required>
+
+        <label for="email">Your email</label>
+        <input id="email" name="email" type="email" autocomplete="email" inputmode="email" required>
+
+        <label for="message">Your message</label>
+        <textarea id="message" name="message" rows="5" maxlength="1000" required></textarea>
+
+        <button type="submit">Send (visual only)</button>
+        <p class="note" id="form-note">This form is a visual demo only (no backend).</p>
+        <div id="form-message-zone" aria-live="polite"></div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2025 – Alicia Marchal</p>
+  </footer>
+  <script src="/portfolio-draft/js/javascript.js" defer></script>
+</body>
+</html>

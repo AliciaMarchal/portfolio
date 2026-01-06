@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Filtre en direct</title>
+  <link rel="stylesheet" href="/portfolio-draft/projects/moviefilterapp/moviefilterapp.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Recherche</h1>
+
+    <label for="search" class="sr-only">Filtrer la liste</label>
+    <input id="search" type="text" placeholder="Tape pour filtrer..." autocomplete="off"/>
+
+    <p id="feedback" aria-live="polite"></p>
+
+    <ul id="items" class="list">
+      
+      <li data-label="Inception">Inception</li>
+      <li data-label="Interstellar">Interstellar</li>
+      <li data-label="The Dark Knight">The Dark Knight</li>
+      <li data-label="Shutter Island">Shutter Island</li>
+      <li data-label="The Matrix">The Matrix</li>
+      <li data-label="Gladiator">Gladiator</li>
+      <li data-label="Fight Club">Fight Club</li>
+      <li data-label="Pulp Fiction">Pulp Fiction</li>
+      <li data-label="Forrest Gump">Forrest Gump</li>
+      <li data-label="The Social Network">The Social Network</li>
+    </ul>
+  </main>
+
+  <script src="/portfolio-draft/projects/moviefilterapp/moviefilterapp.js"></script>
+</body>
+</html>
